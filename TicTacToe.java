@@ -1,50 +1,3 @@
-/*
-set up 3X3 2d array
-fill from 1-9
-#||_0_|_1_|_2_
-0|| 1 | 2 | 3
-1|| 4 | 5 | 6
-2|| 7 | 8 | 9
-
-ask what number to replace with X 
-enter X at index
-print array
-check(array) method
-
-check if 3 in a row
-for(int row =1; row<=3; row++){ selects row 
-	if(arr[row][1] = X && arr[row][2] = X && arr[row][3] = X){
-		X wins!!
-	if(arr[row][1] = O && arr[row][2] = O && arr[row][3] = O){
-		O wins
-
-ask number to replace with O 
-enter X at index
-print array
-
-repeat until someone wins
-if 9 inputs and nobody wins 
-	print draw!, ask to reset game
- if somebody wins
-	Winner! Ask to reset game
-
-
-================================================================================================================
-TODO:
-	CHECK IF POSITION HAS ALREADY BEEN USED ===
-	ASK USER FOR POSITION IF NOT NUMBER 1-9 ===
-	Ask user again if they want to play when they don't input y or n ===
-	Improve Check method?? ===
-	Track turns, wins etc and print when user quits?? XXX
-	Replace empty print statements with \n to make code neater ===
-	STOP USER ENTERING LETTERS ===
-================================================================================================================
-
-
-Notes: 
-	Loser starts next round
-*/
-
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -112,7 +65,6 @@ public class TicTacToe {
         	    	System.out.println("Game has ended in a draw!");
         	    }else{
         	    	 System.out.println("\n" + activePlayer + " wins!"); // Game has ended and isn't a draw. Print winner
-        	    	 sortName(activePlayer); // Sort winners name alphabetically.
         	    	 if(activePlayer == player1name){
         	    	 	xWins++; // Increase number of time X has won.
         	    	 }else{
@@ -216,32 +168,6 @@ public class TicTacToe {
 		return false; // Nobody has won yet
 	}
 
-	
-	// Sort winners name alphabetically
-	public static void sortName(String name){
-		name = name.toUpperCase(); // Change name to uppercase
-		char charArray[] = name.toCharArray(); // Enter name into character array
-		int size = charArray.length; // length of array
-		char temp = 'a';
-		// Bubble sort name
-		for(int i = 0; i < size; i++ ) {
-            for(int x = i+1; x < size; x++) {
-                if(charArray[i]>charArray[x]) {
-                   temp = charArray[i];
-                   charArray[i] = charArray[x];
-                   charArray[x] = temp;
-                }
-            }
-        }
-        
-        System.out.print("Fact: " + name + " sorted alphabetically is: ");
-        for(int i = 0; i < size; i++ ) {
-            System.out.print(charArray[i]); // Print out sorted name
-        }
-        System.out.println(); // Empty line for formating
-        return;
-	}
-
     
     // Print out game stats
 	public static void endGame(long startTime, int totalRounds, int totalTurns, int xWins, int oWins, String player1name, String player2name){
@@ -249,6 +175,7 @@ public class TicTacToe {
     	long minutes = (gameTime / 1000)  / 60; // Get game length in minutes
 		int seconds = (int)((gameTime / 1000) % 60); // Get remaining seconds of game length
 
+		// Print game Stats
         System.out.println("======= Game Stats =======");
         System.out.println("Game length: " + minutes + ":"+ seconds); // Print game length in minutes and seconds
         System.out.println("Total number of rounds played: " + totalRounds);
