@@ -7,7 +7,9 @@ Small games playable in the terminal
 * Users pick a number where they will place their piece.
 * Asked to replay at the end
 * Game stats are printed when finished
-<img src="https://user-images.githubusercontent.com/25159545/130332688-a3290ae2-32dc-45ea-a3db-f26fe7456145.png" width="200">
+<img src="https://user-images.githubusercontent.com/25159545/130332688-a3290ae2-32dc-45ea-a3db-f26fe7456145.png" width="250">
+<img src="https://user-images.githubusercontent.com/25159545/130332936-a8356364-0949-4d2e-b211-e0e9c5eacf20.png" width="300">
+
 
 
 **Connect 4**
