@@ -1,45 +1,4 @@
-/*
-
-#||_0_|_1_|_2_| 3 | 4 | 5 
-0||   |   |   |   |   |
-1||   |   |   |   |   |  
-2||   |   |   |   |   |
-3||   |   | X |   |   |
-4||   |   |   |   |   |
-5||   |   |   |   |   |
-6||   |   |   |   |   |
-
-Print board
-Ask what column
-
-Place at top position
-If column is full ask again
-
-Check if 4 in a row
-If win ask to play again
-
-If no win ask next player for column
-
-Continue until win or board full
-
-
-Check win
-Place at X. Only need to check:
-    Below( 3 below only)
-    Sideways(3 each way)
-    Diagonals(3 each way)
-#||_0_|_1_|_2_| 3 | 4 | 5 
-0||   |   |   |   |   | @
-1|| @ |   |   |   | @ |  
-2||   | @ |   | @ |   |
-3|| @ | @ | X | @ | @ | @
-4||   | @ | @ | @ |   |
-5|| @ |   | @ |   | @ |
-6||   |   | @ |   |   | @
-*/
-
 import java.util.*;
-
 
 public class connect4 {
     public static void main(String args[] ) throws Exception {
@@ -171,7 +130,6 @@ public class connect4 {
     }
 
 
-
     // Check if users position is valid
     public static Boolean checkInput(int col, char game[][], String name){
         // System.out.println(" Checking input:  " + col + "  is valid");
@@ -193,7 +151,7 @@ public class connect4 {
         return true; // Position is valid
     }
 
-        // Check if users position is valid
+    // Check if users position is valid
     public static char[][] placeInput(int col, char game[][], char enter){
         for(int row = 6; row>=0;row--){
             if(game[row][col-1] == ' '){
@@ -206,13 +164,13 @@ public class connect4 {
     }
     
 
-    // Create array and fill with numbers 1-9 to help user select input position
+    // Create game board
     public static char[][] makeArray(){
         System.out.println("\n" + "===== Starting Game =====" + "\n");          
-         char [][] gameBoard = new char[7][6]; // Create 3X3 character array    
+         char [][] gameBoard = new char[7][6]; // Create 7X6 character array    
          for(int row = 0; row<7; row++){
              for(int col = 0; col<6; col++){
-                 gameBoard[row][col] = ' '; // 
+                 gameBoard[row][col] = ' ';
              }
          }   
          return gameBoard; // Return filled array
